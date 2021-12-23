@@ -9,12 +9,14 @@ import Foundation
 
 struct ServerPack: Codable {
     
+    let id: Int
     let name: String
     let code: String
     let position: Int
     let available: String
     let known: Int
     let total: Int
+    let url: String
     
     func convertToEntity() -> Pack {
         

@@ -14,6 +14,7 @@ struct MarvelChampionsApp: App {
         
         WindowGroup {
             
+            PacksView(viewModel: PacksViewModel())
         }
     }
 }
