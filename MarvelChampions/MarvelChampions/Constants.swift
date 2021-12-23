@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants {
     
-    static let baseURL = "https://marvelcdb.com/api/public"
+    static let baseURL = "https://marvelcdb.com/api/public/"
 }

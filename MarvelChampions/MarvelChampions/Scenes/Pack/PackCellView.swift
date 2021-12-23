@@ -19,7 +19,7 @@ struct PackCellView: View {
         
         VStack {
             
-            Spacer().frame(height: 4)
+            Spacer().frame(height: 12)
             
             HStack {
                 
@@ -30,10 +30,10 @@ struct PackCellView: View {
                 Text(pack?.available ??  "")
                     .foregroundColor(Color.gray)
             }
-            
-            Spacer().frame(height: 3)
-            
-            Divider().frame(height: 4)
+                
+            Spacer().frame(height: 10)
+                
+            Divider().frame(height: 2)
         }
         .padding([.leading, .trailing], 16)
     }
