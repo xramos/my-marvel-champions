@@ -25,7 +25,8 @@ struct PacksView: View {
         }
         .onAppear {
             
-            viewModel.getPacks()
+            //viewModel.getPacks()
+            viewModel.getCards()
         }
     }
 }

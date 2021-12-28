@@ -92,13 +92,7 @@ class DBManager: Persistence {
     
     func savePack(pack: Pack) {
         
-        let dbPack = DBPack(id: pack.id,
-                            name: pack.name,
-                            code: pack.code,
-                            position: pack.position,
-                            available: pack.available,
-                            known: pack.known,
-                            total: pack.total)
+        let dbPack = pack.convertToDBEntity()
         
         _ = save(dbPack)
     }
@@ -123,6 +117,37 @@ class DBManager: Persistence {
         }
         
         return packs
+    }
+    
+    // MARK: - Card Methods
+    
+    func saveCard(card: Card) {
+        
+        let dbCard = card.convertToDBEntity()
+        
+        _ = save(dbCard)
+    }
+    
+    func removeCard(card: Card) {
+        
+        let dbCard = card.convertToDBEntity()
+        
+        writeTransactionAndWait(transactions: { () -> Void in
+            
+            realm.delete(realm.objects(DBCard.self).filter("id=%@", dbCard.id))
+            
+        }, completionClosure: { (_) -> Void in})
+    }
+    
+    func getCards() -> [Card] {
+        
+        var cards = [Card]()
+        for result in realm.objects(DBCard.self) {
+            let card = result.convertToEntity()
+            cards.append(card)
+        }
+        
+        return cards
     }
 }
 

@@ -14,4 +14,10 @@ protocol Persistence {
     func removePack(pack: Pack)
     
     func getPacks() -> [Pack]
+    
+    func saveCard(card: Card)
+    
+    func removeCard(card: Card)
+    
+    func getCards() -> [Card]
 }
