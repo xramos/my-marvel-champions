@@ -24,12 +24,27 @@ struct CardCellView: View {
             
             HStack {
                 
-                Text(card.typeName)
-                
-                Spacer()
-                
-                Text(card.factionName)
-                    .foregroundColor(Color.gray)
+                AsyncImage(url: URL(string: card.imagesrc ?? "")) { image in
+                    
+                    image.resizable()
+                    
+                } placeholder: {
+                    
+                    Color.gray
+                }
+                .aspectRatio(contentMode: .fit)
+                .frame(height:50)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+
+                HStack {
+                    
+                    Text(card.name ?? "")
+                    
+                    Spacer()
+                    
+                    Text(card.factionName)
+                        .foregroundColor(Color.gray)
+                }
             }
                 
             Spacer().frame(height: 10)
