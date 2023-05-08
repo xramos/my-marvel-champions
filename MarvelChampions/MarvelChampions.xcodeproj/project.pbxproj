@@ -63,6 +63,9 @@
 		DAFFEED32A0914230012FE6D /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEED22A0914230012FE6D /* FailureView.swift */; };
 		DAFFEED52A0915BC0012FE6D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEED42A0915BC0012FE6D /* LoadingView.swift */; };
 		DAFFEED72A0934370012FE6D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEED62A0934370012FE6D /* InformationView.swift */; };
+		DAFFEEDA2A093F920012FE6D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DAFFEED92A093F920012FE6D /* Lottie */; };
+		DAFFEEDC2A0941200012FE6D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEEDB2A0941200012FE6D /* LottieView.swift */; };
+		DAFFEEE02A0942DB0012FE6D /* spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFFEEDF2A0942DB0012FE6D /* spinner.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,8 @@
 		DAFFEED22A0914230012FE6D /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
 		DAFFEED42A0915BC0012FE6D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		DAFFEED62A0934370012FE6D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		DAFFEEDB2A0941200012FE6D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		DAFFEEDF2A0942DB0012FE6D /* spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spinner.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 			files = (
 				DA3A60BC2A0900EC001F7EEC /* RealmSwift in Frameworks */,
 				DA3A60BA2A0900EC001F7EEC /* Realm in Frameworks */,
+				DAFFEEDA2A093F920012FE6D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +198,7 @@
 		DA0F3A3B2A08FD4900547DFF /* MarvelChampions */ = {
 			isa = PBXGroup;
 			children = (
+				DAFFEEDF2A0942DB0012FE6D /* spinner.json */,
 				DAFFEED12A0914180012FE6D /* Views */,
 				DA3A60BD2A090159001F7EEC /* Cache */,
 				DA3A608B2A08FE6D001F7EEC /* API */,
@@ -492,6 +499,7 @@
 				DAFFEED22A0914230012FE6D /* FailureView.swift */,
 				DAFFEED42A0915BC0012FE6D /* LoadingView.swift */,
 				DAFFEED62A0934370012FE6D /* InformationView.swift */,
+				DAFFEEDB2A0941200012FE6D /* LottieView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 			packageProductDependencies = (
 				DA3A60B92A0900EC001F7EEC /* Realm */,
 				DA3A60BB2A0900EC001F7EEC /* RealmSwift */,
+				DAFFEED92A093F920012FE6D /* Lottie */,
 			);
 			productName = MarvelChampions;
 			productReference = DA0F3A392A08FD4900547DFF /* MarvelChampions.app */;
@@ -590,6 +599,7 @@
 			mainGroup = DA0F3A302A08FD4900547DFF;
 			packageReferences = (
 				DA3A60B82A0900EC001F7EEC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				DAFFEED82A093F920012FE6D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = DA0F3A3A2A08FD4900547DFF /* Products */;
 			projectDirPath = "";
@@ -607,6 +617,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFFEEE02A0942DB0012FE6D /* spinner.json in Resources */,
 				DA0F3A452A08FD4A00547DFF /* Preview Assets.xcassets in Resources */,
 				DA0F3A412A08FD4A00547DFF /* Assets.xcassets in Resources */,
 			);
@@ -644,6 +655,7 @@
 				DA3A609F2A08FE6D001F7EEC /* CardRepositoryImplementation.swift in Sources */,
 				DA3A609E2A08FE6D001F7EEC /* CardRepository.swift in Sources */,
 				DA3A60B22A08FE6D001F7EEC /* DBCard.swift in Sources */,
+				DAFFEEDC2A0941200012FE6D /* LottieView.swift in Sources */,
 				DA3A60A62A08FE6D001F7EEC /* FactionType.swift in Sources */,
 				DA3A60AB2A08FE6D001F7EEC /* GetCardsUseCase.swift in Sources */,
 				DAFFEED52A0915BC0012FE6D /* LoadingView.swift in Sources */,
@@ -1035,6 +1047,14 @@
 				version = 10.7.2;
 			};
 		};
+		DAFFEED82A093F920012FE6D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1047,6 +1067,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA3A60B82A0900EC001F7EEC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		DAFFEED92A093F920012FE6D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAFFEED82A093F920012FE6D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

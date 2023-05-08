@@ -18,9 +18,11 @@ struct LoadingView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .center) {
             
             Spacer()
+            
+            LottieView().frame(width: 60, height: 60)
             
             Text(message)
             
