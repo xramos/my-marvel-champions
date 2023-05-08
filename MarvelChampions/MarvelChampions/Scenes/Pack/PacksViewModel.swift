@@ -11,8 +11,9 @@ import Combine
 class PacksViewModel: ObservableObject {
     
     // Values
+    
+    @Published var state: PacksViewState = .empty(message: "No packs available")
     @Published public private(set) var packs: [Pack] = []
-    @Published public private(set) var showProgressView = false
     
     private var cardCancellable: AnyCancellable?
     private var packCancellable: AnyCancellable?
@@ -21,19 +22,17 @@ class PacksViewModel: ObservableObject {
     
     func getCards() {
         
-        showProgressView = true
+        state = .loading(message: "Loading!")
         
         cardCancellable = GetCardsUseCase().execute()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
-                self.getPacks()
-                
                 switch completion {
                 case .finished:
-                    break
-                case .failure:
-                    break
+                    self.getPacks()
+                case .failure(let error):
+                    self.state = .failure(error: error.localizedDescription)
                 }
                 
             }, receiveValue: { (cards: [Card]) in
@@ -45,19 +44,15 @@ class PacksViewModel: ObservableObject {
     
     func getPacks() {
         
-        //showProgressView = true
-        
         packCancellable = GetPacksUseCase().execute()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
-                self.showProgressView = false
-                
                 switch completion {
                 case .finished:
-                    break
-                case .failure:
-                    break
+                    self.state = .loaded
+                case .failure(let error):
+                    self.state = .failure(error: error.localizedDescription)
                 }
                 
             }, receiveValue: { (packs: [Pack]) in

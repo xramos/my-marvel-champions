@@ -20,17 +20,37 @@ struct CardsByCodeView: View {
         
         VStack {
             
-            ScrollView {
-                
-                ForEach(viewModel.cards) { card in
-                    
-                    CardCellView(card: card)
-                }
-            }
+            content
         }
         .onAppear {
             
             viewModel.getCardsByCode()
+        }
+    }
+    
+    @ViewBuilder
+    private var content: some View {
+        
+        switch viewModel.state {
+        case .empty(let message):
+            InformationView(message: message)
+        case .loading(let message):
+            LoadingView(message: message)
+        case .failure(let error):
+            FailureView(error: error)
+        case .loaded:
+            loadedView()
+        }
+    }
+    
+    private func loadedView() -> some View {
+        
+        ScrollView {
+            
+            ForEach(viewModel.cards) { card in
+                
+                CardCellView(card: card)
+            }
         }
     }
 }

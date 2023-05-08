@@ -13,8 +13,9 @@ class CardsByCodeViewModel: ObservableObject {
     var code: String
     
     // Values
+    
+    @Published var state: CardsByCodeViewState = .empty(message: "No cards available")
     @Published public private(set) var cards: [Card] = []
-    @Published public private(set) var showProgressView = false
     
     private var cardCancellable: AnyCancellable?
     
@@ -27,19 +28,17 @@ class CardsByCodeViewModel: ObservableObject {
     
     func getCardsByCode() {
         
-        showProgressView = true
+        self.state = .loading(message: "Loading!")
         
         cardCancellable = GetCardsByPackCodeUseCase().execute(code: code)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
-                self.showProgressView = false
-                
                 switch completion {
                 case .finished:
-                    break
-                case .failure:
-                    break
+                    self.state = .loaded
+                case .failure(let error):
+                    self.state = .failure(error: error.localizedDescription)
                 }
                 
             }, receiveValue: { (cards: [Card]) in
