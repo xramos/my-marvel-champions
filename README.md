@@ -1,4 +1,4 @@
-# my-marvel-champions
+# Marvel Champions
 App that uses marvelcdb information
 
 Under construction
@@ -7,8 +7,8 @@ Under construction
 - XCode
 - SwiftUI
 - Combine
-- Realm
-- Lottie
+- Realm ("https://github.com/realm/realm-cocoa.git", .exact("10.7.2"))
+- Lottie ("https://github.com/airbnb/lottie-ios.git", .exact("4.1.3"))
 
 ## Requirements 📋
 
