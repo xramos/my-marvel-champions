@@ -149,6 +149,18 @@ class DBManager: Persistence {
         
         return cards
     }
+    
+    func getCardsByPackCode(code: String) -> [Card] {
+        
+        let predicate = NSPredicate(format: "packCode == %@", code)
+        
+        var cards = [Card]()
+        for result in realm.objects(DBCard.self).filter(predicate) {
+            let card = result.convertToEntity()
+            cards.append(card)
+        }
+        return cards
+    }
 }
 
 // MARK: - Private Methods

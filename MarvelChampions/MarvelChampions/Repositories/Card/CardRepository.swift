@@ -11,4 +11,5 @@ import Combine
 protocol CardRepository {
     
     func getCards() -> AnyPublisher<[Card], Error>
+    func getCardsByPackCode(code: String) -> AnyPublisher<[Card], Error>
 }

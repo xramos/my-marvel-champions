@@ -54,6 +54,10 @@
 		DA3A60C32A090159001F7EEC /* CacheTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A60BF2A090159001F7EEC /* CacheTime.swift */; };
 		DA3A60C42A090159001F7EEC /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A60C02A090159001F7EEC /* Cache.swift */; };
 		DA3A60C52A090159001F7EEC /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A60C12A090159001F7EEC /* Caching.swift */; };
+		DAFFEEC42A0909130012FE6D /* GetCardsByPackCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEEC32A0909130012FE6D /* GetCardsByPackCodeUseCase.swift */; };
+		DAFFEEC82A0909BA0012FE6D /* CardsByCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEEC72A0909BA0012FE6D /* CardsByCodeView.swift */; };
+		DAFFEECA2A0909D50012FE6D /* CardsByCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEEC92A0909D50012FE6D /* CardsByCodeViewModel.swift */; };
+		DAFFEECC2A090BEA0012FE6D /* CardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFFEECB2A090BEA0012FE6D /* CardCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +126,10 @@
 		DA3A60BF2A090159001F7EEC /* CacheTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheTime.swift; sourceTree = "<group>"; };
 		DA3A60C02A090159001F7EEC /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DA3A60C12A090159001F7EEC /* Caching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
+		DAFFEEC32A0909130012FE6D /* GetCardsByPackCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsByPackCodeUseCase.swift; sourceTree = "<group>"; };
+		DAFFEEC72A0909BA0012FE6D /* CardsByCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsByCodeView.swift; sourceTree = "<group>"; };
+		DAFFEEC92A0909D50012FE6D /* CardsByCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsByCodeViewModel.swift; sourceTree = "<group>"; };
+		DAFFEECB2A090BEA0012FE6D /* CardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3A60882A08FE6D001F7EEC /* GetCardsUseCase.swift */,
+				DAFFEEC32A0909130012FE6D /* GetCardsByPackCodeUseCase.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -390,6 +399,7 @@
 		DA3A608E2A08FE6D001F7EEC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DAFFEEC62A0909AE0012FE6D /* CardsByCode */,
 				DA3A608F2A08FE6D001F7EEC /* Pack */,
 			);
 			path = Scenes;
@@ -451,6 +461,16 @@
 				DA3A60C12A090159001F7EEC /* Caching.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		DAFFEEC62A0909AE0012FE6D /* CardsByCode */ = {
+			isa = PBXGroup;
+			children = (
+				DAFFEEC72A0909BA0012FE6D /* CardsByCodeView.swift */,
+				DAFFEEC92A0909D50012FE6D /* CardsByCodeViewModel.swift */,
+				DAFFEECB2A090BEA0012FE6D /* CardCellView.swift */,
+			);
+			path = CardsByCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,8 +613,10 @@
 				DA3A60B52A08FE6D001F7EEC /* ServerCard.swift in Sources */,
 				DA3A60AA2A08FE6D001F7EEC /* StorageType.swift in Sources */,
 				DA3A60A02A08FE6D001F7EEC /* RemoteCardDataSource.swift in Sources */,
+				DAFFEEC82A0909BA0012FE6D /* CardsByCodeView.swift in Sources */,
 				DA3A609D2A08FE6D001F7EEC /* LocalCardDataSource.swift in Sources */,
 				DA3A60AF2A08FE6D001F7EEC /* PackCellView.swift in Sources */,
+				DAFFEECC2A090BEA0012FE6D /* CardCellView.swift in Sources */,
 				DA3A609F2A08FE6D001F7EEC /* CardRepositoryImplementation.swift in Sources */,
 				DA3A609E2A08FE6D001F7EEC /* CardRepository.swift in Sources */,
 				DA3A60B22A08FE6D001F7EEC /* DBCard.swift in Sources */,
@@ -603,6 +625,7 @@
 				DA3A60AE2A08FE6D001F7EEC /* HTTPError.swift in Sources */,
 				DA3A60A72A08FE6D001F7EEC /* CardType.swift in Sources */,
 				DA3A60AC2A08FE6D001F7EEC /* GetPacksUseCase.swift in Sources */,
+				DAFFEEC42A0909130012FE6D /* GetCardsByPackCodeUseCase.swift in Sources */,
 				DA3A60A22A08FE6D001F7EEC /* LocalPackDataSource.swift in Sources */,
 				DA3A60A82A08FE6D001F7EEC /* Persistence.swift in Sources */,
 				DA3A60C42A090159001F7EEC /* Cache.swift in Sources */,
@@ -612,6 +635,7 @@
 				DA0F3A3D2A08FD4900547DFF /* MarvelChampionsApp.swift in Sources */,
 				DA3A60B42A08FE6D001F7EEC /* ServerPack.swift in Sources */,
 				DA3A60C52A090159001F7EEC /* Caching.swift in Sources */,
+				DAFFEECA2A0909D50012FE6D /* CardsByCodeViewModel.swift in Sources */,
 				DA3A60C22A090159001F7EEC /* CacheType.swift in Sources */,
 				DA3A60B02A08FE6D001F7EEC /* PacksView.swift in Sources */,
 				DA3A60A32A08FE6D001F7EEC /* PackRepository.swift in Sources */,

@@ -56,4 +56,41 @@ class CardRepositoryImplementation: CardRepository {
             .eraseToAnyPublisher()
         }
     }
+    
+    func getCardsByPackCode(code: String) -> AnyPublisher<[Card], Error> {
+        
+        if remoteDataSource.isGetCardsByPackCodeCacheAvailable(code: code) {
+            
+            // Get cards from DDBB
+            let cards: [Card] = localDataSource.getCardsByPackCode(code: code)
+            
+            return Result.Publisher(cards).eraseToAnyPublisher()
+            
+        } else {
+            
+            // Make network call
+            return remoteDataSource.getCardsByPackCode(code: code).map { serverCards -> [Card] in
+                
+                var cards: [Card] = []
+                
+                // Convert soaentities to entities and save to Core Data
+                for serverCard in serverCards {
+                    
+                    let card = serverCard.convertToEntity()
+                    
+                    self.localDataSource.saveCard(card: card)
+                    
+                    cards.append(card)
+                }
+                
+                // Save Cache
+                self.remoteDataSource.addGetCardsByPackCache(code: code)
+                
+                // Return entities
+                return cards
+            }
+            .mapError({ $0 })
+            .eraseToAnyPublisher()
+        }
+    }
 }

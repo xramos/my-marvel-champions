@@ -19,13 +19,16 @@ struct PacksView: View {
                 
                 ForEach(viewModel.packs) { pack in
                     
-                    PackCellView(pack: pack)
+                    NavigationLink(destination: CardsByCodeView(viewModel: CardsByCodeViewModel(code: pack.code))) {
+                     
+                        PackCellView(pack: pack)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
         .onAppear {
             
-            //viewModel.getPacks()
             viewModel.getCards()
         }
     }

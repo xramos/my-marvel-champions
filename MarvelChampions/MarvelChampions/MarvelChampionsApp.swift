@@ -14,7 +14,10 @@ struct MarvelChampionsApp: App {
         
         WindowGroup {
             
-            PacksView(viewModel: PacksViewModel())
+            NavigationView {
+                
+                PacksView(viewModel: PacksViewModel())
+            }
         }
     }
 }

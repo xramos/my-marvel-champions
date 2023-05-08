@@ -26,4 +26,9 @@ class LocalCardDataSource {
         
         return dbManager.getCards()
     }
+    
+    func getCardsByPackCode(code: String) -> [Card] {
+        
+        return dbManager.getCardsByPackCode(code: code)
+    }
 }
