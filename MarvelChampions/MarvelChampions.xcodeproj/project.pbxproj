@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA03B5772A0BAF3B0014A3C5 /* CardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03B5762A0BAF3B0014A3C5 /* CardDetailViewModel.swift */; };
+		DA03B5792A0BAF8C0014A3C5 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03B5782A0BAF8C0014A3C5 /* CardDetailView.swift */; };
 		DA0F3A3D2A08FD4900547DFF /* MarvelChampionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F3A3C2A08FD4900547DFF /* MarvelChampionsApp.swift */; };
 		DA0F3A412A08FD4A00547DFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0F3A402A08FD4A00547DFF /* Assets.xcassets */; };
 		DA0F3A452A08FD4A00547DFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0F3A442A08FD4A00547DFF /* Preview Assets.xcassets */; };
@@ -86,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA03B5762A0BAF3B0014A3C5 /* CardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewModel.swift; sourceTree = "<group>"; };
+		DA03B5782A0BAF8C0014A3C5 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		DA0F3A392A08FD4900547DFF /* MarvelChampions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChampions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0F3A3C2A08FD4900547DFF /* MarvelChampionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelChampionsApp.swift; sourceTree = "<group>"; };
 		DA0F3A402A08FD4A00547DFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA03B5752A0BAF300014A3C5 /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DA03B5762A0BAF3B0014A3C5 /* CardDetailViewModel.swift */,
+				DA03B5782A0BAF8C0014A3C5 /* CardDetailView.swift */,
+			);
+			path = CardDetail;
+			sourceTree = "<group>";
+		};
 		DA0F3A302A08FD4900547DFF = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +430,7 @@
 		DA3A608E2A08FE6D001F7EEC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DA03B5752A0BAF300014A3C5 /* CardDetail */,
 				DAFFEEC62A0909AE0012FE6D /* CardsByCode */,
 				DA3A608F2A08FE6D001F7EEC /* Pack */,
 			);
@@ -651,6 +665,7 @@
 				DAFFEED32A0914230012FE6D /* FailureView.swift in Sources */,
 				DA3A609D2A08FE6D001F7EEC /* LocalCardDataSource.swift in Sources */,
 				DA3A60AF2A08FE6D001F7EEC /* PackCellView.swift in Sources */,
+				DA03B5792A0BAF8C0014A3C5 /* CardDetailView.swift in Sources */,
 				DAFFEECC2A090BEA0012FE6D /* CardCellView.swift in Sources */,
 				DA3A609F2A08FE6D001F7EEC /* CardRepositoryImplementation.swift in Sources */,
 				DA3A609E2A08FE6D001F7EEC /* CardRepository.swift in Sources */,
@@ -672,6 +687,7 @@
 				DA3A60AD2A08FE6D001F7EEC /* APIManager.swift in Sources */,
 				DA3A60B12A08FE6D001F7EEC /* PacksViewModel.swift in Sources */,
 				DA0F3A3D2A08FD4900547DFF /* MarvelChampionsApp.swift in Sources */,
+				DA03B5772A0BAF3B0014A3C5 /* CardDetailViewModel.swift in Sources */,
 				DA3A60B42A08FE6D001F7EEC /* ServerPack.swift in Sources */,
 				DA3A60C52A090159001F7EEC /* Caching.swift in Sources */,
 				DAFFEECA2A0909D50012FE6D /* CardsByCodeViewModel.swift in Sources */,

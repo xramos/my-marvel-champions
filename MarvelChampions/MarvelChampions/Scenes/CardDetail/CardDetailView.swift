@@ -1,52 +1,43 @@
 //
-//  CardCellView.swift
+//  CardDetailView.swift
 //  MarvelChampions
 //
-//  Created by Xavier Ramos on 8/5/23.
+//  Created by Xavier Ramos on 10/5/23.
 //
 
 import SwiftUI
 
-struct CardCellView: View {
+struct CardDetailView: View {
     
-    var card: Card
+    @ObservedObject var viewModel: CardDetailViewModel
     
-    init(card: Card) {
+    init(viewModel: CardDetailViewModel) {
         
-        self.card = card
+        self.viewModel = viewModel
     }
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             
-            Spacer().frame(height: 12)
-            
-            HStack {
-                
-                cardImage
-
-                HStack {
-                    
-                    cardName
-                    
-                    Spacer()
-                    
-                    cardFactionName
-                }
-            }
-                
             Spacer().frame(height: 10)
-                
-            Divider().frame(height: 2)
+            
+            cardImage
+            
+            Spacer().frame(height: 10)
+            
+            description
+            
+            Spacer()
         }
         .padding([.leading, .trailing], 16)
+        .navigationTitle(viewModel.getCardName())
     }
     
     @ViewBuilder
     var cardImage: some View {
         
-        AsyncImage(url: URL(string: card.imagesrc ?? "")) { image in
+        AsyncImage(url: URL(string: viewModel.card.imagesrc ?? "")) { image in
             
             image.resizable()
             
@@ -55,25 +46,17 @@ struct CardCellView: View {
             Color.gray
         }
         .aspectRatio(contentMode: .fit)
-        .frame(height:50)
-        .clipShape(RoundedRectangle(cornerRadius: 5))
+        .frame(height:300)
     }
     
     @ViewBuilder
-    var cardName: some View {
+    var description: some View {
         
-        Text(card.name ?? "")
-    }
-    
-    @ViewBuilder
-    var cardFactionName: some View {
-        
-        Text(card.factionName)
-            .foregroundColor(Color.gray)
+        Text(viewModel.getCardDescription())
     }
 }
 
-struct CardCellView_Previews: PreviewProvider {
+struct CardDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         
@@ -115,6 +98,6 @@ struct CardCellView_Previews: PreviewProvider {
                         permanent: false,
                         doubleSided: false,
                         imagesrc: "")
-        CardCellView(card: card)
+        CardDetailView(viewModel: CardDetailViewModel(card: card))
     }
 }

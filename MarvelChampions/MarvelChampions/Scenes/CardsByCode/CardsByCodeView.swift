@@ -49,9 +49,14 @@ struct CardsByCodeView: View {
             
             ForEach(viewModel.cards) { card in
                 
-                CardCellView(card: card)
+                NavigationLink(destination: CardDetailView(viewModel: CardDetailViewModel(card: card))) {
+                 
+                    CardCellView(card: card)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
         }
+        .navigationTitle("Cards")
     }
 }
 

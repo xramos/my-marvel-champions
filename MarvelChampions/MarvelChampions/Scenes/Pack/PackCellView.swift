@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PackCellView: View {
     
-    var pack: Pack?
+    var pack: Pack
     
     init(pack: Pack) {
         self.pack = pack
@@ -17,25 +17,34 @@ struct PackCellView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             
             Spacer().frame(height: 12)
-            
-            HStack {
                 
-                Text(pack?.name ?? "")
+            packName
                 
-                Spacer()
+            Spacer()
                 
-                Text(pack?.available ??  "")
-                    .foregroundColor(Color.gray)
-            }
+            packCards
                 
             Spacer().frame(height: 10)
                 
             Divider().frame(height: 2)
         }
         .padding([.leading, .trailing], 16)
+    }
+    
+    @ViewBuilder
+    var packName: some View {
+        
+        Text(pack.name)
+    }
+    
+    @ViewBuilder
+    var packCards: some View {
+        
+        Text("\(pack.total) number of cards")
+                .foregroundColor(Color.gray)
     }
 }
 

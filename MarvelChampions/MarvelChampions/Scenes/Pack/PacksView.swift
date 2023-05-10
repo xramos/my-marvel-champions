@@ -51,6 +51,7 @@ struct PacksView: View {
                 .buttonStyle(PlainButtonStyle())
             }
         }
+        .navigationTitle("Packs")
     }
 }
 
