@@ -159,6 +159,7 @@ class DBManager: Persistence {
             let card = result.convertToEntity()
             cards.append(card)
         }
+        
         return cards
     }
 }

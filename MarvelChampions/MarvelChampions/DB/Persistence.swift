@@ -20,4 +20,6 @@ protocol Persistence {
     func removeCard(card: Card)
     
     func getCards() -> [Card]
+    
+    func getCardsByPackCode(code: String) -> [Card]
 }

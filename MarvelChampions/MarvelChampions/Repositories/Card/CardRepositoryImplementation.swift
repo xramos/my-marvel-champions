@@ -63,7 +63,7 @@ class CardRepositoryImplementation: CardRepository {
             
             // Get cards from DDBB
             let cards: [Card] = localDataSource.getCardsByPackCode(code: code)
-            
+
             return Result.Publisher(cards).eraseToAnyPublisher()
             
         } else {
@@ -85,7 +85,7 @@ class CardRepositoryImplementation: CardRepository {
                 
                 // Save Cache
                 self.remoteDataSource.addGetCardsByPackCache(code: code)
-                
+
                 // Return entities
                 return cards
             }
